@@ -83,6 +83,10 @@
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
 
+    #container {
+        margin-top: 20px;
+    }
+
     #grid {
         grid-template: 100px 100px 100px / 100px 100px 100px;
         grid-gap: 10px;
@@ -91,5 +95,9 @@
     .square {
         width: 100px;
         height: 100px;
+    }
+
+    #diff {
+        margin-top: 40px;
     }
 }

@@ -87,7 +87,7 @@ function Game() {
                 </div>
             </div>
             <div id="diff">
-                <select onClick={(e) => {setDifficulty(e.target.value)}} name="difficulty" id="difficulty">
+                <select onClick={(e) => {setDifficulty(e.target.value); console.log(difficulty)}} name="difficulty" id="difficulty">
                     <option value="easy">Easy</option>
                     <option value="hard">Hard</option>
                     <option value="impossible">Impossible</option>
