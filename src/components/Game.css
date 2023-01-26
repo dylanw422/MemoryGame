@@ -63,3 +63,19 @@
     border: 0px;
     border-radius: 5px;
 }
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+    #grid {
+        grid-template: 100px 100px 100px / 100px 100px 100px;
+        grid-gap: 10px;
+    }
+
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+}
