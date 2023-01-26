@@ -8,7 +8,7 @@ function Game() {
     let colors = ['red','blue','yellow','green','darkorange','cyan','teal','violet','lime']    
 
     const [colorState, setColorState] = useState(colors.map(color => color))
-    const [score, setScore] = useState(-2)
+    const [score, setScore] = useState(-1)
     const [bestScore, setBestScore] = useState(0)
 
     //scrambles colors arr
