@@ -3,20 +3,26 @@ import './Game.css'
 
 
 let usedColors = []
+let colors = ['red','blue','yellow','green','darkorange','cyan','teal','violet','lime']
 
-function Game() {
-    let colors = ['red','blue','yellow','green','darkorange','cyan','teal','violet','lime']    
+function Game() {    
 
     const [colorState, setColorState] = useState(colors.map(color => color))
     const [score, setScore] = useState(-1)
     const [bestScore, setBestScore] = useState(0)
 
     //scrambles colors arr
+    function scramble() {
+        colors.sort(() => Math.floor(Math.random() - 0.5))
+    }
+
+    //changes colors of squares
     function changeColor(e) {
         grabColor(e)
+        scramble()
         setColorState(prevColorState => {
             return prevColorState.map((color, index) => {
-                return colors[(colors.indexOf(color) + 4) % colors.length]
+                return colors[(colors.indexOf(color) + 1) % colors.length]
             })
         })
     }
