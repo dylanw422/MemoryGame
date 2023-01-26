@@ -11,7 +11,7 @@ let usedColors = []
 function Game() {    
 
     const [colorState, setColorState] = useState(colors.map(color => color))
-    const [score, setScore] = useState(-1)
+    const [score, setScore] = useState(-2)
     const [bestScore, setBestScore] = useState(0)
     const [difficulty, setDifficulty] = useState('easy')
 
@@ -55,12 +55,18 @@ function Game() {
 
     useEffect(() => {
         if (difficulty === 'easy') {
+            setScore(-1)
+            setBestScore(0)
             colors = easyArr
             setColorState(easyArr.map(color => color))
         } else if (difficulty === 'hard') {
+            setScore(-1)
+            setBestScore(0)
             colors = hardArr
             setColorState(hardArr.map(color => color))
         } else if (difficulty === 'impossible') {
+            setScore(-1)
+            setBestScore(0)
             colors = impossibleArr;
             setColorState(impossibleArr.map(color => color))
         }
