@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import './Game.css'
 
+let easyArr = ['red','blue','yellow','green','darkorange','cyan','teal','violet','lime']
+let hardArr = ['coral','crimson','chocolate','darkorange','firebrick','indianred','lightsalmon','orangered','sandybrown']
+let impossibleArr = ['azure','darkgray','dimgray','gray','floralwhite','lightgray','lightslategray','slategray','silver']
 
-let usedColors = []
 let colors = ['red','blue','yellow','green','darkorange','cyan','teal','violet','lime']
+let usedColors = []
 
 function Game() {    
 
     const [colorState, setColorState] = useState(colors.map(color => color))
     const [score, setScore] = useState(-1)
     const [bestScore, setBestScore] = useState(0)
+    const [difficulty, setDifficulty] = useState('easy')
 
     //scrambles colors arr
     function scramble() {
@@ -49,6 +53,20 @@ function Game() {
         }
     }, [colorState])
 
+    useEffect(() => {
+        if (difficulty === 'easy') {
+            colors = easyArr
+            setColorState(easyArr.map(color => color))
+        } else if (difficulty === 'hard') {
+            colors = hardArr
+            setColorState(hardArr.map(color => color))
+        } else if (difficulty === 'impossible') {
+            colors = impossibleArr;
+            setColorState(impossibleArr.map(color => color))
+        }
+    }, [difficulty])
+
+
     return (
         <div>
             <div id="scoreboard">
@@ -61,6 +79,13 @@ function Game() {
                         <button key={index} className='square' onClick={changeColor} style={{backgroundColor: color}}></button>
                     ))}
                 </div>
+            </div>
+            <div id="diff">
+                <select onClick={(e) => {setDifficulty(e.target.value)}} name="difficulty" id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="hard">Hard</option>
+                    <option value="impossible">Impossible</option>
+                </select>
             </div>
         </div>
 
