@@ -1,0 +1,65 @@
+#scoreboard {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.score {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(21, 21, 21)
+}
+
+#container {
+    margin-top: 50px;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid {
+    display: grid;
+    grid-template: 200px 200px 200px / 200px 200px 200px;
+    gap: 100px 100px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 5px;
+    caret-color: transparent;
+    border: 0px
+}
+
+.square:hover {
+    box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), inset 10px 10px 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+#reset {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#reset>button {
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+}
